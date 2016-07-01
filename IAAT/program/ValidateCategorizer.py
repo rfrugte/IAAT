@@ -76,7 +76,10 @@ text=l.read()
 lijst_met_voetnoten= ast.literal_eval(text)
 shuffle(lijst_met_voetnoten)
 
-for c in range(0,100):
+
+check2=[]
+for c in range(0,1000):
+    shuffle(lijst_met_voetnoten)
     r=[lijst_met_voetnoten[i:i+110] for i in range(0,len(lijst_met_voetnoten),110)]
     check=[]
     for i in range(0,10):
@@ -105,15 +108,16 @@ for c in range(0,100):
         _ = text_clf.fit(datar,footr)
         predicted=text_clf.predict(data)
         check.append(np.mean(predicted==foot))
-
-    for d in range(0,len(check2)):
-        check2[d]=(check2[d]+check[d])/2 
-
+    for i in range(0,len(check)):    
+        check2.append(check[i])    
+#    for d in range(0,len(check2)):
+#        check2[d]=(check2[d]+check[d])/2 
+#
 plt.plot(check2)
 plt.show
-        
-        
-#print(metrics.classification_report(results,predicted))
+global check        
+print(np.mean(check2))        
+#print(metrics.classification_report(foot,predicted))
 #for i in check:
 #    notes=check[i][7]
 #    predicted= text_clf.predict(notes)

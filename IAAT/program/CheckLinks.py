@@ -63,7 +63,6 @@ if __name__ == '__main__':
 def get_links():
     """Changes the active directory"""
     rd.open_location('/HTM',False)
-    #os.chdir(os.getcwd() + "/HTM")
     """Creates a dictionary to store valid and invalid hyperlinks"""    
     dict_links={}
     """Loops through all files in the directory with extension htm"""    
@@ -81,8 +80,7 @@ def get_links():
                     cleaned_links.append(all_links[i])
         """Makes a set of the list to remove any duplicates"""                    
         unique_links=set(cleaned_links)
-        """Validates all links in the list(it checks if you can still reach the hyperlink)""" 
-        #validate_next(unique_links)         
+        """Validates all links in the list(it checks if you can still reach the hyperlink)"""      
         good_hyperlink,failed_hyperlink,total,total_valid=validate_links(unique_links)
         """Updates the dictionary with the filename as the key and with valid hyperlinks and invalid hyperlinks as the values"""         
         dict_links.update({filename:(good_hyperlink,failed_hyperlink)})  

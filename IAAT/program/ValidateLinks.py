@@ -30,22 +30,4 @@ def execute(working_list,archived):
         working_list[i].append(good_hyperlink)
         working_list[i].append(failed_hyperlink)
         working_list[i].append(archived_hyperlink)
-    return working_list    
-    
-#def execute2(working_list):
-#    for i in range(0,len(working_list)):
-#        if working_list[i][5]: 
-#            good_hyperlink,failed_hyperlink,total,total_valid=None,None,0,0
-#            cl(working_list[i][5])
-#        if working_list[i][5]:
-#            good_hyperlink,failed_hyperlink,total,total_valid=cl.validate_links(working_list[i][5])
-#        if failed_hyperlink:
-#            archived_hyperlink=cl.check_invalid_links(failed_hyperlink)
-#        else:
-#            archived_hyperlink=None
-#        working_list[i].append(total)
-#        working_list[i].append(total_valid)
-#        working_list[i].append(good_hyperlink)
-#        working_list[i].append(failed_hyperlink)
-#        working_list[i].append(archived_hyperlink)
-#    return working_list       
+    return working_list          

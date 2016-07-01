@@ -6,13 +6,10 @@ Created on Sun Jun 19 11:11:42 2016
 """
 
 import os
-import shutil 
 def execute():
     docx=os.path.dirname(os.path.realpath(__file__))+'\DOCX'
-    htm=os.path.dirname(os.path.realpath(__file__))+'\HTM'
     results=os.path.dirname(os.path.realpath(__file__))+'\Results'
     clear_map(docx) 
-    clear_map(htm)   
     clear_map(results)   
     
     

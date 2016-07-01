@@ -92,10 +92,6 @@ class PageOne(tk.Frame):
         
         label = tk.Label(self, text="Converting", font=TITLE_FONT)
         label.pack(side="top", fill="x", pady=10)
-        #button = tk.Button(self, text="Go to the start page",
-                           #command=lambda: controller.show_frame("StartPage"))
-        #button.pack()
-        
         button2 = tk.Button(self,text="start", command=self.start, font=BUTTON_FONT, bg="white")
         button2.pack()
         self.labels = tk.Label(self, text="", font=TEXT_FONT)
@@ -115,14 +111,9 @@ class PageOne(tk.Frame):
         self.maxbytes = len(os.listdir(os.path.dirname(os.path.realpath(__file__))+ "/PDF"))
         self.progress["maximum"] = len(os.listdir(os.path.dirname(os.path.realpath(__file__))+ "/PDF"))
         rd.open_location('/program',False)
-        #os.chdir("..")
-        #os.chdir(os.getcwd() + "/program")
         import GetFootnotes
-        
         GetFootnotes.execute()
-        #os.chdir("..")
         rd.open_location('/DOCX',False)
-       # os.chdir(os.getcwd() + "/DOCX")
         self.read_bytes()
         os.chdir('..')
     def read_bytes(self):
@@ -143,9 +134,6 @@ class PageTwo(tk.Frame):
         self.controller = controller
         label = tk.Label(self, text="Choose a method", font=TITLE_FONT)
         label.pack(side="top", fill="x", pady=10)
-        #button = tk.Button(self, text="Go to the start page",
-                           #command=lambda: controller.show_frame("StartPage"))
-        #button.pack()
         button2 = tk.Button(self,text="Standard execution", command=self.standard, font=BUTTON_FONT, bg="white")
         button2.pack()
         button3 = tk.Button(self,text="+ Hyperlink check", command=self.hyperlink, font=BUTTON_FONT, bg="white")

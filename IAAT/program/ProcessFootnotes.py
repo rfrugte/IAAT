@@ -6,7 +6,6 @@ Created on Mon May  9 16:43:27 2016
 """
 
 import rd
-#import codecs
 import os
 import xlrd
 
@@ -14,9 +13,7 @@ def open_location():
     '''Changes the working directory and loops through all files with extension "xlsx"  '''
     if not '\program' in os.getcwd():    
         rd.open_location('/program',False)    
-    rd.open_location('/Results',False)    
-    #os.chdir("..")
-    #os.chdir(os.getcwd() + "/Results")     
+    rd.open_location('/Results',False)       
     
 def read_lines(filename):
     '''Converts the rows in a xlsx file into a list '''
@@ -31,6 +28,7 @@ def read_lines(filename):
         
 
 def first_classification(listed_footnotes):
+    '''Filters some of irrelevant footnotes out'''
     likely_relevant=[]
     likely_not_relevant=[]
     links=[]
@@ -44,6 +42,7 @@ def first_classification(listed_footnotes):
             
 
 def main_loop():
+    '''main loop'''
     open_location()
     number_of_footnotes_list=[]
     footnotes_list=[]

@@ -15,7 +15,6 @@ def execute(raw_text):
    if 'sec (' in raw_text:
        raw_text=raw_text.replace('sec (','sec(')
        splitted=raw_text.split()    
-       #print(splitted)
    splitted=raw_text.split()
    name=[]
    name_sec=[]
@@ -155,12 +154,3 @@ def run(footnoteso):
         footnoteso[j].append(compl)
     return footnoteso            
 
-#l=open('trainingsset09062016.txt','r')
-#text=l.read()
-#lijst_met_voetnoten= ast.literal_eval(text)
-#footnotes=[]
-#listy=[]
-#for x in lijst_met_voetnoten:
-#    footnotes.append(x[0])
-#    
-#dfg=run(footnotes)    

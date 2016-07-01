@@ -9,7 +9,13 @@ def execute(raw_text):
    splitted=raw_text.split()
    name=[]
    name_sec=[]
+   if ') xxx' in raw_text:
+       year=None
+       name_s=None
+       name_sec_s=None
+       return ([name_s,name_sec_s],year)
    for word in splitted:
+        
         if word.startswith('com(') or word.startswith('c(') or word.startswith('{com(') or word.startswith('{c('):
             index_next=splitted[splitted.index(word)+1]
             if word.startswith('{'):
@@ -28,7 +34,6 @@ def execute(raw_text):
    else:
        name_s='none'
        name='none'
-    #name_sec=[word for word in raw_text.split() if word.startswith('sec(')]
    if name_sec:    
        name_sec_s=' '.join((name_sec[0][0],name_sec[0][1])) 
    else:

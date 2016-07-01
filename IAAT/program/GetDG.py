@@ -4,7 +4,6 @@ Created on Sat Jun 18 15:54:56 2016
 
 @author: gebruiker
 """
-#import urrlib
 from urllib.request import urlopen
 def execute(info):
     gg=[]

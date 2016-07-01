@@ -25,16 +25,14 @@ def train_sgdc(training_list):
     cate=[]
     for i in training_list:
         footnotes.append(i[0])
-        cate.append(i[1])
-    #count_vect = CountVectorizer()    
+        cate.append(i[1])  
     text_clf=Pipeline([('vect',CountVectorizer()),('tfidf',TfidfTransformer()),('clf',SGDClassifier(loss='hinge', penalty='l2',alpha=1e-3,n_iter=5, random_state=42)),])
     _ = text_clf.fit(footnotes,cate)
     return text_clf    
     
 def categorize_footnotes(working_list,text_clf):
-    check2={}
     for i in range(0,len(working_list)):
-        notes=working_list[i][-2]
+        notes=working_list[i][-3]
         predicted= text_clf.predict(notes)
         predicted_footnotes=predicted.tolist()
         working_list[i].append(predicted_footnotes)
